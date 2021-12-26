@@ -65,7 +65,7 @@ const menu = [
   },
   {
     id: 9,
-    title: "venila milkshake",
+    title: "vanilla milkshake",
     category: "shake",
     price: 7.99,
     img: "./images/item-11.jpeg",
@@ -73,11 +73,11 @@ const menu = [
   },
   {
     id: 10,
-    title: "venilla icecream",
+    title: "vanilla icecream",
     category: "icecream",
     price: 5.99,
     img: "./images/item-14.jpeg",
-    desc: `I'm a cool and delicious icecream made with cream and venila.`,
+    desc: `I'm a cool and delicious icecream made with cream and vanilla.`,
   },
   {
     id: 11,
@@ -105,7 +105,7 @@ const menu = [
   },
   {
     id: 14,
-    title: "chocolate milkshake with venila",
+    title: "chocolate milkshake with vanilla",
     category: "shake",
     price: 9.99,
     img: "./images/item-12.jpeg",
