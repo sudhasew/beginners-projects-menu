@@ -92,16 +92,9 @@ h2 {
   background: #c59d5f;
   color: #fff;
 }
-/* @media screen and (min-width: 768px) {
-  .menu-item {
-    grid-template-columns: 400px 1fr;
-    gap: 0 1.25rem;
-    max-width: 40rem;
-  }
-  .photo {
-    height: 250px;
-  }
-} */
+.item-text {
+  letter-spacing: 1px;
+}
 @media screen and (min-width: 768px) {
   .section-center {
     width: 95vw;

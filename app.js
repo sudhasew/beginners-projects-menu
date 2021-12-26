@@ -1,19 +1,19 @@
 const menu = [
   {
     id: 1,
-    title: "ravva dosa",
+    title: "sooji dosa",
     category: "breakfast",
     price: 4.99,
     img: "./images/item-1.jpeg",
-    desc: `I'm rava dosa made with sooji rava all-purpose flour buttermilk and added some spices.`,
+    desc: `I'm rava dosa made with sooji, all-purpose flour, buttermilk and added some spices.`,
   },
   {
     id: 2,
-    title: "biryani",
+    title: "veg biryani",
     category: "lunch",
     price: 9.99,
     img: "./images/item-4.jpeg",
-    desc: `I'm biryani made with basmati rice and added some spices into it.`,
+    desc: `I'm biryani made with basmati rice, veggies and added some spices into it.`,
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const menu = [
     category: "dinner",
     price: 9.99,
     img: "./images/item-7.jpeg",
-    desc: `I'm tali with rice roti indian pickle curries rasam some crisps and yogurt.`,
+    desc: `I'm tali with rice roti, indian pickle, curries, rasam, rice crisps and yogurt.`,
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const menu = [
     category: "breakfast",
     price: 4.99,
     img: "./images/item-3.jpeg",
-    desc: `I'm dokla made with chickpea flour all-purpose flour and butter-milk`,
+    desc: `I'm dokla made with chickpea flour, all-purpose flour, and butter-milk.`,
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const menu = [
     category: "lunch",
     price: 10.99,
     img: "./images/item-5.jpeg",
-    desc: `I'm tali with rice vada ghee curries papad and rasam.`,
+    desc: `I'm tali with rice vada, ghee, curries, papad and rasam.`,
   },
   {
     id: 6,
@@ -45,15 +45,15 @@ const menu = [
     category: "dinner",
     price: 8.99,
     img: "./images/item-8.jpeg",
-    desc: `I'm tali with rice roti indian curries gulab-jamun and yogurt.`,
+    desc: `I'm tali with rice, roti, indian curries, gulab-jamun and yogurt.`,
   },
   {
     id: 7,
-    title: "bread omlet",
+    title: "bread omelette",
     category: "breakfast",
     price: 5.99,
     img: "./images/item-2.jpeg",
-    desc: `I'm tali with rice roti indian pickle curries some crisps and yogurt.`,
+    desc: `I'm bread omlette with eggs and white bread. And added some spices into it`,
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ const menu = [
     category: "lunch",
     price: 12.99,
     img: "./images/item-6.jpeg",
-    desc: `I'm tali with rice roti pulao curries dal and fried potatoes-curry and yogurt.`,
+    desc: `I'm tali with rice, roti, pulao, curries, dal, fried potato-curry and yogurt.`,
   },
   {
     id: 9,
@@ -69,19 +69,19 @@ const menu = [
     category: "dinner",
     price: 8.99,
     img: "./images/item-9.jpeg",
-    desc: `I'm tali with rice sweet yogurt-rice crisps and salad.`,
+    desc: `I'm tali with rice, sweet, yogurt-rice, crisps and salad.`,
   },
   {
     id: 10,
-    title: "milk shake",
+    title: "chocolate milkshake",
     category: "shake",
     price: 7.99,
     img: "./images/item-10.jpeg",
-    desc: `I'm shake made with milk and chocolate.`,
+    desc: `I'm shake made with milk and venila ice-cream.`,
   },
   {
     id: 11,
-    title: "godzilla milkshake",
+    title: "venila milkshake",
     category: "shake",
     price: 7.99,
     img: "./images/item-11.jpeg",
@@ -89,11 +89,35 @@ const menu = [
   },
   {
     id: 12,
-    title: "godzilla milkshake",
+    title: "chocolate milkshake with venila",
     category: "shake",
-    price: 7.99,
+    price: 9.99,
     img: "./images/item-12.jpeg",
     desc: `I'm shake made with milk and chocolate.`,
+  },
+  {
+    id: 13,
+    title: "chocolate icecream",
+    category: "icecream",
+    price: 6.99,
+    img: "./images/item-13.jpeg",
+    desc: `I'm a cool and delicious icecream made with cream and chocolate.`,
+  },
+  {
+    id: 14,
+    title: "venilla icecream",
+    category: "icecream",
+    price: 5.99,
+    img: "./images/item-14.jpeg",
+    desc: `I'm a cool and delicious icecream made with cream and venila.`,
+  },
+  {
+    id: 15,
+    title: "oreo icecream",
+    category: "icecream",
+    price: 8.99,
+    img: "./images/item-15.jpeg",
+    desc: `I'm a cool and delicious icecream made with cream and oreo biscuits.`,
   },
 ];
 
@@ -103,44 +127,7 @@ const container = document.querySelector(".btn-container");
 //LOAD ITEMS
 window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(menu);
-
-  const catogiries = menu.reduce(
-    function (values, item) {
-      if (!values.includes(item.category)) {
-        values.push(item.category);
-      }
-      return values;
-    },
-    ["all"]
-  );
-
-  const categoryBtns = catogiries
-    .map(function (category) {
-      return `<button class="filter-btn" type="button" data-id=${category}>
-    ${category}
-      </button>`;
-    })
-    .join("");
-  container.innerHTML = categoryBtns;
-  const filterBtns = document.querySelectorAll(".filter-btn");
-
-  //FILTER ITEMS
-  filterBtns.forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      const category = e.currentTarget.dataset.id;
-      const menuCatogery = menu.filter(function (menuItem) {
-        if (menuItem.category === category) {
-          return menuItem;
-        }
-      });
-      //console.log(menuCatogery);
-      if (category === "all") {
-        displayMenuItems(menu);
-      } else {
-        displayMenuItems(menuCatogery);
-      }
-    });
-  });
+  displayMenuButtons();
 });
 
 function displayMenuItems(menuItems) {
@@ -160,4 +147,44 @@ function displayMenuItems(menuItems) {
   });
   displayMenu = displayMenu.join("");
   sectionCenter.innerHTML = displayMenu;
+}
+
+function displayMenuButtons() {
+  const catogiries = menu.reduce(
+    function (values, item) {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    },
+    ["all"]
+  );
+
+  const categoryBtns = catogiries
+    .map(function (category) {
+      return `<button class="filter-btn" type="button" data-id=${category}>
+        ${category}
+          </button>`;
+    })
+    .join("");
+  container.innerHTML = categoryBtns;
+  const filterBtns = container.querySelectorAll(".filter-btn");
+
+  //FILTER ITEMS
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      const category = e.currentTarget.dataset.id;
+      const menuCatogery = menu.filter(function (menuItem) {
+        if (menuItem.category === category) {
+          return menuItem;
+        }
+      });
+      //console.log(menuCatogery);
+      if (category === "all") {
+        displayMenuItems(menu);
+      } else {
+        displayMenuItems(menuCatogery);
+      }
+    });
+  });
 }
